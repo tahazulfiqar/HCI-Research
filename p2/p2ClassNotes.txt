@@ -1,0 +1,25 @@
+CSC428 Project 2:
+
+Stage a: 
+		how many people to recruit
+		how to test
+		between subjects or within subjects?
+		does not have to be functional/textual description 
+		what makes what we're building any better?
+
+stage b: April 1st
+		research paper
+		full write-up of entire study 
+
+stage c: April 2nd 
+		code needs to be demonstrated and coded
+
+Photo classification:
+		make people sit through 163 photos 
+		3 for training, 160 for rest.
+		get 20 data points from adults
+				20 particpant - 2 condition
+				within 10 people
+		baseline: whatever our OS will do
+		make people do full set, or set the amount of time they have to something reasonable ie) 10-15 mins. account for training events
+		
