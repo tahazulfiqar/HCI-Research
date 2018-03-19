@@ -9,7 +9,7 @@ import configureStore from "./store/configureStore.js";
 import "bootstrap/dist/css/bootstrap.css";
 
 import App from "./pages/App";
-// import Search from "./pages/Search";
+import Classify from "./pages/Classify";
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
@@ -22,7 +22,7 @@ ReactDOM.render(
       onUpdate={() => window.scrollTo(0, 0)}
     >
       <Route path="/" component={App}>
-        {/* <IndexRoute component={Search} /> */}
+        <IndexRoute component={Classify} />
       </Route>
     </Router>
   </Provider>,
