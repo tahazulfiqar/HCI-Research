@@ -1,8 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { Route, Router, browserHistory, IndexRoute } from "react-router";
+import { syncHistoryWithStore } from "react-router-redux";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import configureStore from "./store/configureStore.js";
+
+import "bootstrap/dist/css/bootstrap.css";
+
+import App from "./pages/App";
+// import Search from "./pages/Search";
+
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router
+      history={history}
+      store={store}
+      onUpdate={() => window.scrollTo(0, 0)}
+    >
+      <Route path="/" component={App}>
+        {/* <IndexRoute component={Search} /> */}
+      </Route>
+    </Router>
+  </Provider>,
+  document.getElementById("root")
+);
