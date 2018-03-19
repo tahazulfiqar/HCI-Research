@@ -2,8 +2,8 @@ CSC428 Stuff.
 
 Important Links:  
 
-https://markus.teach.cs.toronto.edu/csc428-2018-01/?locale=en
+Tutorials:
+https://egghead.io/courses/getting-started-with-redux
 
-
-TODO:
-Taha: Scan consent forms from interviews. 
+Image Swiping
+https://codesandbox.io/s/n033m6nw00 
