@@ -21,7 +21,8 @@ const createPhotoMatrix = () => {
 
 const InitialState = {
   entities: createPhotoMatrix(),
-  selected: 0
+  selectedRow: 0,
+  selectedCol: 0
 };
 
 export function photos(state = InitialState, action) {
@@ -35,25 +36,25 @@ export function photos(state = InitialState, action) {
     case ActionTypes.UP_PHOTO: {
       return {
         ...state,
-        selected: (state.selected - 8) % 39
+        selectedRow: (state.selectedRow - 1) % 5
       };
     }
     case ActionTypes.DOWN_PHOTO: {
       return {
         ...state,
-        selected: (state.selected + 8) % 39
+        selectedRow: (state.selectedRow + 1) % 5
       };
     }
     case ActionTypes.LEFT_PHOTO: {
       return {
         ...state,
-        selected: (state.selected - 1) % 39
+        selectedCol: (state.selectedCol - 1) % 8
       };
     }
     case ActionTypes.RIGHT_PHOTO: {
       return {
         ...state,
-        selected: (state.selected + 1) % 39
+        selectedCol: (state.selectedCol + 1) % 8
       };
     }
     default: {

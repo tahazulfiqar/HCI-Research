@@ -1,9 +1,11 @@
 import { createStructuredSelector } from "reselect";
 
 const entitiesSelector = state => state.photos.entities;
-const selectedSelector = state => state.photos.selected;
+const selectedRowSelector = state => state.photos.selectedRow;
+const selectedColSelector = state => state.photos.selectedCol;
 
 export default createStructuredSelector({
   entities: entitiesSelector,
-  selected: selectedSelector
+  selectedRow: selectedRowSelector,
+  selectedCol: selectedColSelector
 });

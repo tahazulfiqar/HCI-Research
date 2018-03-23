@@ -1,31 +1,50 @@
 import React, { Component } from "react";
 import { Container, ListGroup, ListGroupItem, Row, Col } from "reactstrap";
-
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => {
-    images[item.replace("./", "")] = r(item);
-  });
-  return images;
-}
+import importAll from "../utils/photoImport";
 const images = importAll(require.context("../images/dataset", false, /\.jpg/));
 
-const rowMap = photos =>
+const colMap = (photos, selectedRow, selectedCol) =>
+  photos.map(photo => {
+    var style = {
+      height: "100%",
+      width: "100%",
+      paddingTop: "4px",
+      paddingBottom: "4px"
+    };
+    if (selectedRow && photos.indexOf(photo) == selectedCol)
+      style = {
+        ...style,
+        backgroundColor: "yellow",
+        borderStyle: "solid",
+        borderColor: "green",
+        borderWidth: "2px",
+        paddingTop: "2px",
+        paddingBottom: "2px"
+      };
+
+    return (
+      <Col>
+        <div style={style}>
+          <img src={images[photo + ".jpg"]} height="42" />
+        </div>
+      </Col>
+    );
+  });
+
+const rowMap = (photos, selectedRow, selectedCol) =>
   photos.map(row => (
     <div>
-      <Row>{colMap(row)}</Row>
+      <Row>{colMap(row, photos.indexOf(row) == selectedRow, selectedCol)}</Row>
       <div style={{ marginBottom: "5px" }} />
     </div>
   ));
 
-const colMap = photos =>
-  photos.map(photo => (
-    <Col>
-      <img src={images[photo + ".jpg"]} height="42" />
-    </Col>
-  ));
-
-const grid = props => rowMap(props.photos.entities);
+const grid = props =>
+  rowMap(
+    props.photos.entities,
+    props.photos.selectedRow,
+    props.photos.selectedCol
+  );
 
 class PhotoList extends Component {
   render() {
