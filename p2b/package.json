@@ -13,7 +13,8 @@
     "reactstrap": "^5.0.0-beta.2",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "webpack": "^3.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,7 +23,11 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "file-loader": "^1.1.11",
+    "image-webpack-loader": "^4.2.0",
     "redux-devtools": "^3.4.1",
-    "redux-devtools-extension": "^2.13.2"
+    "redux-devtools-extension": "^2.13.2",
+    "url-loader": "^1.0.1",
+    "webpack-cli": "^2.0.13"
   }
 }

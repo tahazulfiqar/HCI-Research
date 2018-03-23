@@ -1,6 +1,7 @@
 import React from "react";
 // import VideoSearch from "../containers/VideoSearchContainer.js";
 import { Container, Row, Col } from "reactstrap";
+import pic from "../images/folder.png";
 
 const Classify = () => (
   <div
@@ -30,7 +31,16 @@ const Classify = () => (
               backgroundColor: "white"
             }}
           >
-            Folder 2
+            <Row>
+              <Col sm="12" md={{ size: 8, offset: 2 }}>
+                <img src={pic} height="90" />
+              </Col>
+            </Row>
+            <Row>
+              <Col sm="12" md={{ size: 8, offset: 2 }}>
+                Folder 2
+              </Col>
+            </Row>
           </Col>
           <Col
             style={{
@@ -53,7 +63,18 @@ const Classify = () => (
         }}
       >
         <Row>
-          <Col>Folder 1</Col>
+          <Col>
+            <Row>
+              <Col sm="12" md={{ size: 8, offset: 2 }}>
+                <img src={pic} height="90" />
+              </Col>
+            </Row>
+            <Row>
+              <Col sm="12" md={{ size: 8, offset: 2 }}>
+                Folder 1
+              </Col>
+            </Row>
+          </Col>
           <Col
             style={{
               backgroundColor: "white"
@@ -66,7 +87,16 @@ const Classify = () => (
               backgroundColor: "pink"
             }}
           >
-            Folder 3
+            <Row>
+              <Col sm="12" md={{ size: 8, offset: 2 }}>
+                <img src={pic} height="90" />
+              </Col>
+            </Row>
+            <Row>
+              <Col sm="12" md={{ size: 8, offset: 2 }}>
+                Folder 3
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>
