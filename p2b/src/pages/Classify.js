@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import pic from "../images/folder.png";
 
-import { PhotoList } from "../components/PhotoList";
+import PhotoList from "../containers/PhotoListContainer";
 
 const Classify = () => (
   <div
@@ -117,15 +117,15 @@ const Classify = () => (
         }}
       >
         <Row>
-          <Col />
           <Col
+            sm="12"
+            md={{ size: 8, offset: 2 }}
             style={{
               backgroundColor: "white"
             }}
           >
             <PhotoList />
           </Col>
-          <Col />
         </Row>
       </Container>
     </div>
