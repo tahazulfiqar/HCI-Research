@@ -36,25 +36,25 @@ export function photos(state = InitialState, action) {
     case ActionTypes.UP_PHOTO: {
       return {
         ...state,
-        selectedRow: (state.selectedRow - 1) % 5
+        selectedRow: (state.selectedRow - 1 + 5) % 5
       };
     }
     case ActionTypes.DOWN_PHOTO: {
       return {
         ...state,
-        selectedRow: (state.selectedRow + 1) % 5
+        selectedRow: (state.selectedRow + 1 + 5) % 5
       };
     }
     case ActionTypes.LEFT_PHOTO: {
       return {
         ...state,
-        selectedCol: (state.selectedCol - 1) % 8
+        selectedCol: (state.selectedCol - 1 + 8) % 8
       };
     }
     case ActionTypes.RIGHT_PHOTO: {
       return {
         ...state,
-        selectedCol: (state.selectedCol + 1) % 8
+        selectedCol: (state.selectedCol + 1 + 8) % 8
       };
     }
     default: {

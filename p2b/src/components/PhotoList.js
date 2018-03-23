@@ -48,6 +48,33 @@ const grid = props =>
   );
 
 class PhotoList extends Component {
+  _handleKeyDown = event => {
+    switch (event.keyCode) {
+      case 37:
+        console.log("left");
+        this.props.leftPhoto();
+        break;
+      case 38:
+        console.log("up");
+        this.props.upPhoto();
+        break;
+      case 39:
+        console.log("right");
+        this.props.rightPhoto();
+        break;
+      case 40:
+        console.log("down");
+        this.props.downPhoto();
+        break;
+      default:
+        break;
+    }
+  };
+
+  componentWillMount() {
+    document.addEventListener("keydown", this._handleKeyDown.bind(this));
+  }
+
   render() {
     console.log(this.props);
     return (
