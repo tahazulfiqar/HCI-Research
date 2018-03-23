@@ -1,14 +1,14 @@
 import React from "react";
-// import VideoSearch from "../containers/VideoSearchContainer.js";
 import { Container, Row, Col } from "reactstrap";
 import pic from "../images/folder.png";
 
 import PhotoList from "../containers/PhotoListContainer";
+import Preview from "../containers/PreviewContainer";
 
 const Classify = () => (
   <div
     style={{
-      backgroundColor: "#F4F2F3",
+      backgroundColor: "#F5F5F5",
       height: "100%",
       width: "100%",
       position: "absolute"
@@ -16,39 +16,71 @@ const Classify = () => (
   >
     <div
       style={{
-        height: "33.3%",
-        textAlign: "center",
-        backgroundColor: "red"
+        height: "25%",
+        textAlign: "center"
       }}
     >
-      <Container
-        style={{
-          backgroundColor: "pink"
-        }}
-      >
+      <Container>
         <Row>
           <Col />
-          <Col
-            style={{
-              backgroundColor: "white"
-            }}
-          >
-            <Row>
-              <Col sm="12" md={{ size: 8, offset: 2 }}>
-                <img src={pic} height="90" />
-              </Col>
-            </Row>
-            <Row>
-              <Col sm="12" md={{ size: 8, offset: 2 }}>
-                Folder 2
-              </Col>
-            </Row>
+          <Col>
+            <div style={{ marginTop: "11%" }}>
+              <Row>
+                <Col sm="12" md={{ size: 8, offset: 2 }}>
+                  <img src={pic} height="90" />
+                </Col>
+              </Row>
+              <Row>
+                <Col sm="12" md={{ size: 8, offset: 2 }}>
+                  Faces
+                </Col>
+              </Row>
+            </div>
           </Col>
-          <Col
-            style={{
-              backgroundColor: "pink"
-            }}
-          />
+          <Col />
+        </Row>
+      </Container>
+    </div>
+
+    <div
+      style={{
+        height: "35%",
+        textAlign: "center"
+      }}
+    >
+      <Container>
+        <Row>
+          <Col>
+            <div style={{ marginTop: "16%" }}>
+              <Row>
+                <Col sm="12" md={{ size: 8, offset: 2 }}>
+                  <img src={pic} height="90" />
+                </Col>
+              </Row>
+              <Row>
+                <Col sm="12" md={{ size: 8, offset: 2 }}>
+                  Text
+                </Col>
+              </Row>
+            </div>
+          </Col>
+          <Col>
+            <Preview />
+          </Col>
+          <Col>
+            <div style={{ marginTop: "16%" }}>
+              <Row>
+                <Col sm="12" md={{ size: 8, offset: 2 }}>
+                  <img src={pic} height="90" />
+                </Col>
+              </Row>
+              <Row>
+                <Col sm="12" md={{ size: 8, offset: 2 }}>
+                  Other
+                </Col>
+              </Row>
+            </div>
+          </Col>
         </Row>
       </Container>
     </div>
@@ -59,71 +91,9 @@ const Classify = () => (
         textAlign: "center"
       }}
     >
-      <Container
-        style={{
-          backgroundColor: "pink"
-        }}
-      >
+      <Container>
         <Row>
-          <Col>
-            <Row>
-              <Col sm="12" md={{ size: 8, offset: 2 }}>
-                <img src={pic} height="90" />
-              </Col>
-            </Row>
-            <Row>
-              <Col sm="12" md={{ size: 8, offset: 2 }}>
-                Folder 1
-              </Col>
-            </Row>
-          </Col>
-          <Col
-            style={{
-              backgroundColor: "white"
-            }}
-          >
-            Preview
-          </Col>
-          <Col
-            style={{
-              backgroundColor: "pink"
-            }}
-          >
-            <Row>
-              <Col sm="12" md={{ size: 8, offset: 2 }}>
-                <img src={pic} height="90" />
-              </Col>
-            </Row>
-            <Row>
-              <Col sm="12" md={{ size: 8, offset: 2 }}>
-                Folder 3
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-
-    <div
-      style={{
-        height: "33.3%",
-        textAlign: "center",
-        backgroundColor: "red"
-      }}
-    >
-      <Container
-        style={{
-          backgroundColor: "pink"
-        }}
-      >
-        <Row>
-          <Col
-            sm="12"
-            md={{ size: 8, offset: 2 }}
-            style={{
-              backgroundColor: "white"
-            }}
-          >
+          <Col sm="12" md={{ size: 8, offset: 2 }}>
             <PhotoList />
           </Col>
         </Row>

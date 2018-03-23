@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Container, ListGroup, ListGroupItem, Row, Col } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import importAll from "../utils/photoImport";
+
 const images = importAll(require.context("../images/dataset", false, /\.jpg/));
 
 const colMap = (photos, selectedRow, selectedCol) =>
@@ -8,8 +9,8 @@ const colMap = (photos, selectedRow, selectedCol) =>
     var style = {
       height: "100%",
       width: "100%",
-      paddingTop: "4px",
-      paddingBottom: "4px"
+      paddingTop: "3px",
+      paddingBottom: "3px"
     };
     if (selectedRow && photos.indexOf(photo) == selectedCol)
       style = {
