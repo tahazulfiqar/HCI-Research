@@ -3,7 +3,9 @@ import { createStructuredSelector } from "reselect";
 
 import App from "../components/App.js";
 
-const selectors = {};
+import app from "../selectors/app";
+
+const selectors = { app };
 const actions = {};
 
 export default connect(createStructuredSelector(selectors), actions)(App);
