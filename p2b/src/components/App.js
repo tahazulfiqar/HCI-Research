@@ -26,7 +26,7 @@ class App extends React.Component {
     return (
       <div href="#" onClick={this.toggle}>
         {this.props.children}
-        {this.state.modal ? (
+        {this.state.modal && !this.props.app.isEmpty ? (
           <div
             className={this.props.className}
             style={{
