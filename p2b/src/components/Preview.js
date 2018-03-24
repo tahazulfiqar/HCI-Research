@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { NodeGroup } from "react-move";
+import moment from "moment";
 import importAll from "../utils/photoImport";
-import { removePhoto } from "../actions/photos";
 
 const images = importAll(require.context("../images/dataset", false, /\.jpg/));
 const defaultX = 650;
 const defaultY = 380;
+const timestampFormat = "MM-DD-YY HH:mm:ss.SSS";
 
 class Preview extends Component {
   constructor(props) {
@@ -20,15 +21,24 @@ class Preview extends Component {
   _onMouseMove(e) {
     if (e.screenX < 370) {
       this.props.removePhoto();
-      this.props.classifyLeft(this.props.preview.selected);
+      this.props.classifyLeft(
+        this.props.preview.selected,
+        moment().format(timestampFormat)
+      );
       this.setState({ x: defaultX, y: defaultY });
     } else if (e.screenY < 250) {
       this.props.removePhoto();
-      this.props.classifyUp(this.props.preview.selected);
+      this.props.classifyUp(
+        this.props.preview.selected,
+        moment().format(timestampFormat)
+      );
       this.setState({ x: defaultX, y: defaultY });
     } else if (e.screenX > 820) {
       this.props.removePhoto();
-      this.props.classifyRight(this.props.preview.selected);
+      this.props.classifyRight(
+        this.props.preview.selected,
+        moment().format(timestampFormat)
+      );
       this.setState({ x: defaultX, y: defaultY });
     } else {
       this.setState({ x: e.screenX, y: e.screenY });

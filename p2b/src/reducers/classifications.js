@@ -13,14 +13,21 @@ export function classifications(state = InitialState, action) {
         ...state,
         left: {
           ...state.left,
-          photos: state.left.photos.concat([action.photo])
+          photos: state.left.photos.concat([
+            { id: action.photo, timestamp: action.timestamp }
+          ])
         }
       };
     }
     case ActionTypes.CLASSIFY_UP: {
       return {
         ...state,
-        up: { ...state.up, photos: state.up.photos.concat([action.photo]) }
+        up: {
+          ...state.up,
+          photos: state.up.photos.concat([
+            { id: action.photo, timestamp: action.timestamp }
+          ])
+        }
       };
     }
     case ActionTypes.CLASSIFY_RIGHT: {
@@ -28,7 +35,9 @@ export function classifications(state = InitialState, action) {
         ...state,
         right: {
           ...state.right,
-          photos: state.right.photos.concat([action.photo])
+          photos: state.right.photos.concat([
+            { id: action.photo, timestamp: action.timestamp }
+          ])
         }
       };
     }
