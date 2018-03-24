@@ -27,7 +27,7 @@ const Classify = () => (
             <div style={{ marginTop: "11%" }}>
               <Row>
                 <Col sm="12" md={{ size: 8, offset: 2 }}>
-                  <img src={pic} height="90" />
+                  <img src={pic} alt={pic} height="90" />
                 </Col>
               </Row>
               <Row>
@@ -54,7 +54,7 @@ const Classify = () => (
             <div style={{ marginTop: "16%" }}>
               <Row>
                 <Col sm="12" md={{ size: 8, offset: 2 }}>
-                  <img src={pic} height="90" />
+                  <img src={pic} alt={pic} height="90" />
                 </Col>
               </Row>
               <Row>
@@ -71,7 +71,7 @@ const Classify = () => (
             <div style={{ marginTop: "16%" }}>
               <Row>
                 <Col sm="12" md={{ size: 8, offset: 2 }}>
-                  <img src={pic} height="90" />
+                  <img src={pic} alt={pic} height="90" />
                 </Col>
               </Row>
               <Row>

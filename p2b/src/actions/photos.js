@@ -4,8 +4,8 @@ export const DOWN_PHOTO = "DOWN_PHOTO";
 export const LEFT_PHOTO = "LEFT_PHOTO";
 export const RIGHT_PHOTO = "RIGHT_PHOTO";
 
-export function removePhoto(idx = 0) {
-  return { type: REMOVE_PHOTO, idx };
+export function removePhoto() {
+  return { type: REMOVE_PHOTO };
 }
 
 export function upPhoto() {

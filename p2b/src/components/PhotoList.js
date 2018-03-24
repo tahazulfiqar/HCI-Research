@@ -4,6 +4,9 @@ import importAll from "../utils/photoImport";
 
 const images = importAll(require.context("../images/dataset", false, /\.jpg/));
 
+const rowPadder = row =>
+  row.length < 8 ? row.concat(Array.apply(null, Array(8 - row.length))) : row;
+
 const colMap = (photos, selectedRow, selectedCol) =>
   photos.map(photo => {
     var style = {
@@ -12,7 +15,7 @@ const colMap = (photos, selectedRow, selectedCol) =>
       paddingTop: "4px",
       paddingBottom: "4px"
     };
-    if (selectedRow && photos.indexOf(photo) == selectedCol)
+    if (selectedRow && photos.indexOf(photo) === selectedCol)
       style = {
         ...style,
         backgroundColor: "yellow",
@@ -22,11 +25,14 @@ const colMap = (photos, selectedRow, selectedCol) =>
         paddingTop: "2px",
         paddingBottom: "2px"
       };
+    var filename = photo + ".jpg";
 
     return (
       <Col>
         <div style={style}>
-          <img src={images[photo + ".jpg"]} height="42" />
+          {photo ? (
+            <img src={images[filename]} alt={filename} height="42" />
+          ) : null}
         </div>
       </Col>
     );
@@ -35,7 +41,13 @@ const colMap = (photos, selectedRow, selectedCol) =>
 const rowMap = (photos, selectedRow, selectedCol) =>
   photos.map(row => (
     <div>
-      <Row>{colMap(row, photos.indexOf(row) == selectedRow, selectedCol)}</Row>
+      <Row>
+        {colMap(
+          rowPadder(row),
+          photos.indexOf(row) === selectedRow,
+          selectedCol
+        )}
+      </Row>
       <div style={{ marginBottom: "5px" }} />
     </div>
   ));
@@ -61,6 +73,9 @@ class PhotoList extends Component {
         break;
       case 40:
         this.props.downPhoto();
+        break;
+      case 82:
+        this.props.removePhoto();
         break;
       default:
         break;
