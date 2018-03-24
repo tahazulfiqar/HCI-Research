@@ -9,8 +9,8 @@ const colMap = (photos, selectedRow, selectedCol) =>
     var style = {
       height: "100%",
       width: "100%",
-      paddingTop: "3px",
-      paddingBottom: "3px"
+      paddingTop: "4px",
+      paddingBottom: "4px"
     };
     if (selectedRow && photos.indexOf(photo) == selectedCol)
       style = {
@@ -51,19 +51,15 @@ class PhotoList extends Component {
   _handleKeyDown = event => {
     switch (event.keyCode) {
       case 37:
-        console.log("left");
         this.props.leftPhoto();
         break;
       case 38:
-        console.log("up");
         this.props.upPhoto();
         break;
       case 39:
-        console.log("right");
         this.props.rightPhoto();
         break;
       case 40:
-        console.log("down");
         this.props.downPhoto();
         break;
       default:
