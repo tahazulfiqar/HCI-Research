@@ -2,19 +2,11 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import Preview from "../components/Preview";
-
-// import {
-//   removePhoto,
-//   upPhoto,
-//   downPhoto,
-//   leftPhoto,
-//   rightPhoto
-// } from "../actions/photos";
-
+import { removePhoto } from "../actions/photos";
+import { classifyLeft, classifyUp, classifyRight } from "../actions/classify";
 import preview from "../selectors/preview";
 
 const selectors = { preview };
-
-const actions = {};
+const actions = { removePhoto, classifyLeft, classifyUp, classifyRight };
 
 export default connect(createStructuredSelector(selectors), actions)(Preview);

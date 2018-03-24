@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { NodeGroup } from "react-move";
 import importAll from "../utils/photoImport";
+import { removePhoto } from "../actions/photos";
 
 const images = importAll(require.context("../images/dataset", false, /\.jpg/));
+const defaultX = 650;
+const defaultY = 380;
 
 class Preview extends Component {
   constructor(props) {
     super(props);
-    this.state = { x: 650, y: 450 };
+    this.state = { x: defaultX, y: defaultY };
   }
 
   componentDidMount() {
@@ -15,7 +18,21 @@ class Preview extends Component {
   }
 
   _onMouseMove(e) {
-    this.setState({ x: e.screenX, y: e.screenY });
+    if (e.screenX < 370) {
+      this.props.removePhoto();
+      this.props.classifyLeft(this.props.preview.selected);
+      this.setState({ x: defaultX, y: defaultY });
+    } else if (e.screenY < 250) {
+      this.props.removePhoto();
+      this.props.classifyUp(this.props.preview.selected);
+      this.setState({ x: defaultX, y: defaultY });
+    } else if (e.screenX > 820) {
+      this.props.removePhoto();
+      this.props.classifyRight(this.props.preview.selected);
+      this.setState({ x: defaultX, y: defaultY });
+    } else {
+      this.setState({ x: e.screenX, y: e.screenY });
+    }
   }
 
   render() {
@@ -51,13 +68,12 @@ class Preview extends Component {
             <div
               onMouseMove={this._onMouseMove.bind(this)}
               style={{
-                WebkitTransform: `translate3d(${x - 650}px, ${y - 450}px, 0)`,
-                transform: `translate3d(${x - 650}px, ${y - 450}px, 0)`
+                WebkitTransform: `translate3d(${x - defaultX}px, ${y -
+                  defaultY}px, 0)`,
+                transform: `translate3d(${x - defaultX}px, ${y -
+                  defaultY}px, 0)`
               }}
             >
-              <h1>
-                {x} {y}
-              </h1>
               <img src={images[filename]} alt={filename} height="230" />
             </div>
           )
