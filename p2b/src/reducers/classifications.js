@@ -45,6 +45,33 @@ export function classifications(state = InitialState, action) {
         }
       };
     }
+    case ActionTypes.UPDATE_FOLDER_LEFT_NAME: {
+      return {
+        ...state,
+        left: {
+          ...state.left,
+          folderName: action.name
+        }
+      };
+    }
+    case ActionTypes.UPDATE_FOLDER_UP_NAME: {
+      return {
+        ...state,
+        up: {
+          ...state.up,
+          folderName: action.name
+        }
+      };
+    }
+    case ActionTypes.UPDATE_FOLDER_RIGHT_NAME: {
+      return {
+        ...state,
+        right: {
+          ...state.right,
+          folderName: action.name
+        }
+      };
+    }
     default: {
       return state;
     }

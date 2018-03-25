@@ -74,9 +74,6 @@ class PhotoList extends Component {
       case 40:
         this.props.downPhoto();
         break;
-      case 82:
-        this.props.removePhoto();
-        break;
       default:
         break;
     }

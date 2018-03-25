@@ -1,9 +1,7 @@
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import App from "../components/App.js";
-
-import app from "../selectors/app";
+import PhotoList from "../components/PhotoList";
 
 import {
   updateFolderLeftName,
@@ -12,7 +10,8 @@ import {
 } from "../actions/classify";
 import { classificationMode } from "../actions/mode";
 
-const selectors = { app };
+const selectors = {};
+
 const actions = {
   updateFolderLeftName,
   updateFolderUpName,
@@ -20,4 +19,4 @@ const actions = {
   classificationMode
 };
 
-export default connect(createStructuredSelector(selectors), actions)(App);
+export default connect(createStructuredSelector(selectors), actions)(PhotoList);

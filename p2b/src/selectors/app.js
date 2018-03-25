@@ -4,6 +4,7 @@ import { matrixCreator } from "../utils/matrixCreator";
 const entitiesSelector = state => matrixCreator(state.photos.entities);
 const selectedRowSelector = state => state.photos.selectedRow;
 const selectedColSelector = state => state.photos.selectedCol;
+const modeSelector = state => state.mode.classificationMode;
 
 const emptyEntitiesSelector = createSelector(
   entitiesSelector,
@@ -20,5 +21,6 @@ const selectedSelector = createSelector(
 
 export default createStructuredSelector({
   selected: selectedSelector,
-  isEmpty: emptyEntitiesSelector
+  isEmpty: emptyEntitiesSelector,
+  classificationMode: modeSelector
 });

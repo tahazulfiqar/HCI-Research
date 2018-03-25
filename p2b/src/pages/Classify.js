@@ -4,6 +4,7 @@ import pic from "../images/folder.png";
 
 import PhotoList from "../containers/PhotoListContainer";
 import Preview from "../containers/PreviewContainer";
+import FolderName from "../containers/FolderNameContainer";
 
 const Classify = () => (
   <div
@@ -31,9 +32,7 @@ const Classify = () => (
                 </Col>
               </Row>
               <Row>
-                <Col sm="12" md={{ size: 8, offset: 2 }}>
-                  Faces
-                </Col>
+                <FolderName name="upName" size="8" offset="2" />
               </Row>
             </div>
           </Col>
@@ -57,10 +56,9 @@ const Classify = () => (
                   <img src={pic} alt={pic} height="90" />
                 </Col>
               </Row>
+
               <Row>
-                <Col sm="12" md={{ size: 8, offset: 3 }}>
-                  Text
-                </Col>
+                <FolderName name="leftName" size="8" offset="3" />
               </Row>
             </div>
           </Col>
@@ -75,9 +73,7 @@ const Classify = () => (
                 </Col>
               </Row>
               <Row>
-                <Col sm="12" md={{ size: 8, offset: 2 }}>
-                  Other
-                </Col>
+                <FolderName name="rightName" size="8" offset="2" />
               </Row>
             </div>
           </Col>
