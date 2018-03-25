@@ -50,24 +50,24 @@ const Classify = () => (
     >
       <Container>
         <Row>
-          <Col>
+          <Col md={{ size: 4 }}>
             <div style={{ marginTop: "16%" }}>
               <Row>
-                <Col sm="12" md={{ size: 8, offset: 2 }}>
+                <Col sm="12" md={{ size: 8, offset: 3 }}>
                   <img src={pic} alt={pic} height="90" />
                 </Col>
               </Row>
               <Row>
-                <Col sm="12" md={{ size: 8, offset: 2 }}>
+                <Col sm="12" md={{ size: 8, offset: 3 }}>
                   Text
                 </Col>
               </Row>
             </div>
           </Col>
-          <Col>
+          <Col md={{ size: 4 }}>
             <Preview />
           </Col>
-          <Col>
+          <Col md={{ size: 3 }}>
             <div style={{ marginTop: "16%" }}>
               <Row>
                 <Col sm="12" md={{ size: 8, offset: 2 }}>

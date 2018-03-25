@@ -26,14 +26,14 @@ class Preview extends Component {
         moment().format(timestampFormat)
       );
       this.setState({ x: defaultX, y: defaultY });
-    } else if (e.screenY < 250) {
+    } else if (e.screenY < 240) {
       this.props.removePhoto();
       this.props.classifyUp(
         this.props.preview.selected,
         moment().format(timestampFormat)
       );
       this.setState({ x: defaultX, y: defaultY });
-    } else if (e.screenX > 820) {
+    } else if (e.screenX > 815) {
       this.props.removePhoto();
       this.props.classifyRight(
         this.props.preview.selected,
