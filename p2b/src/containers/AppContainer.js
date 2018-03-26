@@ -10,14 +10,16 @@ import {
   updateFolderUpName,
   updateFolderRightName
 } from "../actions/classify";
-import { classificationMode } from "../actions/mode";
+import { classificationMode, testPhase, trainingPhase } from "../actions/mode";
 
 const selectors = { app };
 const actions = {
   updateFolderLeftName,
   updateFolderUpName,
   updateFolderRightName,
-  classificationMode
+  classificationMode,
+  testPhase,
+  trainingPhase
 };
 
 export default connect(createStructuredSelector(selectors), actions)(App);

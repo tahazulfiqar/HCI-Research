@@ -54,6 +54,30 @@ class FolderNamer extends Component {
                     />
                   </FormGroup>
                   <br />
+                  <FormGroup tag="fieldset">
+                    <legend>Phase:</legend>
+                    <FormGroup check>
+                      <Label check>
+                        <Input
+                          type="radio"
+                          name="phase"
+                          onChange={e => this.props.props.trainingPhase()}
+                        />
+                        Training
+                      </Label>
+                    </FormGroup>
+                    <FormGroup check>
+                      <Label check>
+                        <Input
+                          type="radio"
+                          name="phase"
+                          onChange={e => this.props.props.testPhase()}
+                        />
+                        Test
+                      </Label>
+                    </FormGroup>
+                  </FormGroup>
+                  <br />
                   <Button type="submit">Submit</Button>
                 </Form>
               </CardText>

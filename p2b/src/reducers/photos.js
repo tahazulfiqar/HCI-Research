@@ -1,4 +1,5 @@
-import * as ActionTypes from "../actions/photos";
+import * as photosActions from "../actions/photos";
+import * as modeActions from "../actions/mode";
 import shuffle from "../utils/shuffle";
 
 const createPhotoArray = () => {
@@ -6,7 +7,7 @@ const createPhotoArray = () => {
   for (var i = 1; i <= 151; i++) {
     imageIdxs.push(i);
   }
-  return shuffle(imageIdxs).slice(0, 40);
+  return shuffle(imageIdxs);
 };
 
 const numRows = state => Math.ceil(state.entities.length / 8);
@@ -16,14 +17,15 @@ const firstCol = state => state.selectedCol === 0;
 const rowRemainder = state => state.entities.length % 8;
 
 const InitialState = {
-  entities: createPhotoArray(),
+  fullPhotoList: createPhotoArray(),
+  entities: [],
   selectedRow: 0,
   selectedCol: 0
 };
 
 export function photos(state = InitialState, action) {
   switch (action.type) {
-    case ActionTypes.REMOVE_PHOTO: {
+    case photosActions.REMOVE_PHOTO: {
       return {
         ...state,
         entities: state.entities
@@ -48,7 +50,7 @@ export function photos(state = InitialState, action) {
             : state.selectedRow
       };
     }
-    case ActionTypes.UP_PHOTO: {
+    case photosActions.UP_PHOTO: {
       return {
         ...state,
         selectedRow:
@@ -59,7 +61,7 @@ export function photos(state = InitialState, action) {
             : (state.selectedRow - 1 + numRows(state)) % numRows(state)
       };
     }
-    case ActionTypes.DOWN_PHOTO: {
+    case photosActions.DOWN_PHOTO: {
       return {
         ...state,
         selectedRow:
@@ -70,7 +72,7 @@ export function photos(state = InitialState, action) {
             : (state.selectedRow + 1 + numRows(state)) % numRows(state)
       };
     }
-    case ActionTypes.LEFT_PHOTO: {
+    case photosActions.LEFT_PHOTO: {
       return {
         ...state,
         selectedCol:
@@ -82,7 +84,7 @@ export function photos(state = InitialState, action) {
               : (state.selectedCol - 1 + 8) % 8
       };
     }
-    case ActionTypes.RIGHT_PHOTO: {
+    case photosActions.RIGHT_PHOTO: {
       return {
         ...state,
         selectedCol:
@@ -92,6 +94,18 @@ export function photos(state = InitialState, action) {
             : state.selectedCol + 1 === (rowRemainder(state) || 8)
               ? 0
               : (state.selectedCol + 1 + 8) % 8
+      };
+    }
+    case modeActions.TEST_PHASE: {
+      return {
+        ...state,
+        entities: state.fullPhotoList.slice(0, 40)
+      };
+    }
+    case modeActions.TRAINING_PHASE: {
+      return {
+        ...state,
+        entities: state.fullPhotoList.slice(0, 10)
       };
     }
     default: {
