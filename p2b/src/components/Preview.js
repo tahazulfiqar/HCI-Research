@@ -3,6 +3,7 @@ import { NodeGroup } from "react-move";
 import moment from "moment";
 import importAll from "../utils/photoImport";
 
+// Dynamic image import: https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
 const images = importAll(require.context("../images/dataset", false, /\.jpg/));
 const defaultX = 650;
 const defaultY = 380;
@@ -45,6 +46,7 @@ class Preview extends Component {
     }
   }
 
+  // Photo animation: https://codesandbox.io/s/n033m6nw00
   render() {
     console.log(this.props);
     const filename = this.props.preview.selected + ".jpg";

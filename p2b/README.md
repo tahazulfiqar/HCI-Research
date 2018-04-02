@@ -1,3 +1,12 @@
+## Sources:
+
+Modal: https://reactstrap.github.io/components/modals/
+Dynamic import import: https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
+Capitalize: https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
+Photo animation: https://codesandbox.io/s/n033m6nw00
+Photos: https://photos.google.com/share/AF1QipPhjjwGoqPszXw6YwZSgqSfyz23d0KT-KuQrKkivhvKIkGeAn6jb8OjSB_dnGQD8g?key=MFZnZUF6NnhlSXotNkxmdzNuX2hoS25vUTRnUzNR
+Array shuffle: https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+
 ## Running the app
 
 Do the following to get started:
@@ -15,7 +24,7 @@ Do the following to get started:
 
 When it's time for the study:
 
-* Make sure everything is working properly. 
+* Make sure everything is working properly.
 * Have Redux DevTools open while they participate in the study.
 * Run the training phase first, then refresh to select the test phase.
 * **IMPORTANT**: After the test phase, **do not** refresh the page. This **will erase** the data that we need.

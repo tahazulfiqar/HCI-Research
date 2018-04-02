@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
 import importAll from "../utils/photoImport";
 
+// Dynamic image import: https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
 const images = importAll(require.context("../images/dataset", false, /\.jpg/));
 
 const rowPadder = row =>
